@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Create seeds for each environment
+gem 'seedbank'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -38,13 +40,35 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # An IRB alternative and runtime developer console
+  gem 'pry'
+  # Avoid repeating yourself in rails console
+  gem 'pry-rails'
+  # A Ruby static code analyzer and formatter
+  gem 'rubocop', '~> 0.58.2', require: false
+  # Factory Bot Rails is a fixtures replacement with a straightforward definition syntax
+  gem 'factory_bot_rails'
+  # Faker is a library for generating fake data such as names, addresses, and phone numbers
+  gem 'faker'
+  # Rspec Rails is a testing framework for Rails
+  gem 'rspec-rails', '~> 3.7'
+  # Code style checking for RSpec files
+  gem 'rubocop-rspec'
+  # SimpleCov is a code coverage analysis tool for Ruby
+  gem 'simplecov', require: false
+  # Shoulda Matchers provides RSpec- and Minitest-compatible one-liners that test common Rails functionality
+  gem 'shoulda-matchers', '~> 3.1'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby
+  gem 'webmock'
+  # help to kill N+1 queries and unused eager loading
+  gem 'bullet'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -59,4 +83,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
