@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  use_doorkeeper do
+  use_doorkeeper_openid_connect do
     controllers applications: 'oauth_applications'
   end
 

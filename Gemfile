@@ -42,7 +42,6 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 gem 'doorkeeper'
-gem 'doorkeeper-openid_connect'
 
 gem 'jquery-rails'
 

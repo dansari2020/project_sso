@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 owner = User.create!(
-  email: 'user@mail.com',
-  password: 'doorkeeper',
-  password_confirmation: 'doorkeeper'
+    email: 'user@example.com',
+    password: 'doorkeeper',
+    password_confirmation: 'doorkeeper'
 )
 
 app = Doorkeeper::Application.create!(
-  name: 'Client',
-  redirect_uri: 'https://localhost:3001/callback',
-  owner: owner
+    name: 'Doorkeeper Sinatra Client',
+    redirect_uri: 'http://localhost:4002/users/auth/doorkeeper/callback',
+    owner: owner
 )
 
 puts 'Application: '
