@@ -9,12 +9,12 @@ default: &default
 
 development:
   <<: *default
-  database: leansso_development
+  database: project_sso_development
 
 test:
   <<: *default
-  database: leansso_test
+  database: project_sso_test
 
 production:
   <<: *default
-  database: <%= ENV.fetch("DATABASE_NAME") { "leansso_production" } %>
+  database: <%= ENV.fetch("DATABASE_NAME") { "project_sso_production" } %>

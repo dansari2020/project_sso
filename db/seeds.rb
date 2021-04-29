@@ -2,12 +2,12 @@
 
 owner = User.create!(
   email: 'user@example.com',
-  password: '123456',
-  password_confirmation: '123456'
+  password: 'doorkeeper',
+  password_confirmation: 'doorkeeper'
 )
 
 app = Doorkeeper::Application.create!(
-  name: 'LeanSSO Client',
+  name: 'ProjectSSO Client',
   redirect_uri: "#{ENV['CALLBACK_CLIENT_URL']}users/auth/doorkeeper/callback",
   owner: owner
 )
