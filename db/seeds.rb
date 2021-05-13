@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-owner = User.create!(
+
+owner = User.find_by(email: 'user@example.com') || User.create!(
   email: 'user@example.com',
   password: 'doorkeeper',
   password_confirmation: 'doorkeeper'
